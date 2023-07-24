@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main_body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.bg_img{
+    background-image: linear-gradient(rgba(2, 7, 21, 0.438), rgba(6, 1, 11, 0.352)), url(/images/job_img2.jpg); 
+    background-position: center;
+    background-size: cover; 
+    background-color: rgba(21, 18, 18, 0.319); 
+    height: 30vh;
+}
+.brand-name{
+    font-family: 'Smooch', cursive;
+}
+
+.become_fixed{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
