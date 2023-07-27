@@ -56,7 +56,6 @@ export default function Home({searchParams}) {
                           <p className="flex items-center my-5"><span><i className='bx bxs-calendar text-gray-600 text-lg mr-2' ></i></span>Posted: <span className="bg-gray-300 rounded-[30px] text-xs text-black p-2">25th August</span></p>
                       </div>
                       <div className="mr-auto">
-                          {/* <button className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md">Apply here.</button> */}
                           <Link className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md" target='_blank' href={link}>Apply here</Link>
                       </div>
                   </div>
