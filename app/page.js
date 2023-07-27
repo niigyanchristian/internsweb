@@ -87,10 +87,12 @@ export default function Home() {
                         <div key={item.id} className="p-5 border-b border-t border-primary hover:bg-gray-100 cursor-pointer text-gray-600">
                         <div className=" flex justify-between">
                             <h1 className=" text-[25px] md:text-3xl text-gray-800 font-semibold">{item.title}</h1>
+                            <div>
                             <Link href={{
                                 pathname:'/details',
                                 query:item
                             }} className="bg-primary text-white px-4 py-1 md:px-8 md:py-2 rounded-md hover:bg-secondary">View</Link>
+                            </div>
                         </div>
                         <p className="">{item.name}
                         </p>

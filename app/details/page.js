@@ -4,12 +4,14 @@ import '@/../../styles/globals.css'
 import positionContainer from '@/public/js/script';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import {useRouter } from 'next/navigation';
 
 export default function Home({searchParams}) {
     const [isClient, setIsClient] = useState(false);
-    
-
+    const router = useRouter();
+console.log('====================================');
+console.log(router);
+console.log('====================================');
     useEffect(() => {
         setIsClient(true)
     }, []);
@@ -36,7 +38,9 @@ export default function Home({searchParams}) {
               <section className="mx-[3%] sm:mx-[5%] md:mx-[10%]">
                   <div className="m-2 sm:m-4 md:m-7">
                       <div className="mt-10 flex items-center">
-                          <a title="Go Back" className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></a>
+                          {/* <Link onClick={()=>router.back} className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></Link> */}
+                          <button onClick={()=>router.back()} className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></button>
+                          {/* <a title="Go Back" ></a> */}
                       </div>
                       <p className=" text-center text-primary text-5xl font-bold mt-10 md:mt-0">Get Hired!</p>
                   </div>
