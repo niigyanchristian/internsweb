@@ -20,11 +20,7 @@ function positionContainer(){
        input1.style.width = '90%';
        input2.style.width = '90%';
     }
-    // console.log('Abdul Kudus')
-    // console.log(scrollTop)
 
-    console.log(section1.offsetTop)
-    console.log(scrollTop)
   }
 
 export default positionContainer;

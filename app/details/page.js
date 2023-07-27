@@ -4,15 +4,13 @@ import '@/../../styles/globals.css'
 import positionContainer from '@/public/js/script';
 import Link from 'next/link';
 import Image from 'next/image';
-// import {useRouter } from 'next/navigation';
+import {useRouter } from 'next/navigation';
 
 export default function Home({searchParams}) {
     const [isClient, setIsClient] = useState(false);
-    const {title,name, location,description}=searchParams;
-    // const router = useRouter();
-console.log('====================================');
-console.log('-->',title,name,location,description);
-console.log('====================================');
+    const {title,name, location,description,about,link}=searchParams;
+    const router = useRouter();
+
 
     useEffect(() => {
         setIsClient(true)
@@ -41,7 +39,7 @@ console.log('====================================');
                   <div className="m-2 sm:m-4 md:m-7">
                       <div className="mt-10 flex items-center">
                           {/* <Link onClick={()=>router.back} className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></Link> */}
-                          <button className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></button>
+                          <div onClick={()=>router.back()} className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></div>
                           {/* <a title="Go Back" ></a> */}
                       </div>
                       <p className=" text-center text-primary text-5xl font-bold mt-10 md:mt-0">Get Hired!</p>
@@ -59,7 +57,7 @@ console.log('====================================');
                       </div>
                       <div className="mr-auto">
                           {/* <button className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md">Apply here.</button> */}
-                          <Link className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md" target='_blank' href={'#'}>Apply here</Link>
+                          <Link className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md" target='_blank' href={link}>Apply here</Link>
                       </div>
                   </div>
                   
@@ -72,7 +70,7 @@ console.log('====================================');
       
                       <h2 className="mt-16 font-semibold text-black">About Company</h2>
                       <p className="my-4">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta provident obcaecati odio, eligendi voluptate nemo ex molestiae dignissimos fugiat id eius saepe sunt tempora, qui consequuntur expedita eaque, ipsa incidunt? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci quidem fuga et laboriosam natus, odio, vel, quasi sequi eveniet labore error corrupti voluptatum nulla libero veritatis atque explicabo minima earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, nesciunt facere modi error dolorum laborum, omnis harum rerum nulla ab animi distinctio dolores alias illo ea nam obcaecati labore consectetur?
+                          {about}
                       </p>
       
                       <h2 className="flex items-center mt-16 font-semibold text-black">Detailed Duties<span><i className='bx bxs-briefcase text-gray-500 text-lg mx-2' ></i></span></h2>
