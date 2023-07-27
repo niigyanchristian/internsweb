@@ -1,10 +1,10 @@
 "use client";
 import { useEffect,useState } from 'react';
-import '@/../../styles/globals.css'
-import positionContainer from '@/public/js/script';
+import '@/../../styles/globals.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import {useRouter } from 'next/navigation';
+import waveStyle from './page.module.css'
 
 export default function Home({searchParams}) {
     const [isClient, setIsClient] = useState(false);
@@ -30,17 +30,17 @@ export default function Home({searchParams}) {
                       <a className="brand-name text-3xl font-semibold">Get Work</a>
                   </div>
                   <div className="">
-                      <a href="#" className="mx-4 text-xl text-gray-800 hover:text-secondary hover:font-semibold transition-all duration-300">Home</a>
-                      <a href="#" className="mx-4 text-xl text-gray-800 hover:text-secondary hover:font-semibold transition-all duration-300">Post Job</a>
+                      <Link href="/" className="mx-4 text-xl text-gray-800 hover:text-primary hover:font-semibold transition-all duration-300">Home</Link>
+                      <Link href={link} className="mx-4 text-xl text-gray-800 hover:text-secondary hover:font-semibold transition-all duration-300">Apply</Link>
                   </div>
               </nav>
       
               <section className="mx-[3%] sm:mx-[5%] md:mx-[10%]">
                   <div className="m-2 sm:m-4 md:m-7">
                       <div className="mt-10 flex items-center">
-                          {/* <Link onClick={()=>router.back} className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></Link> */}
+                     
                           <div onClick={()=>router.back()} className="p-1 cursor-pointer hover:bg-gray-400 px-6 text-left rounded-[18px] bg-gray-300"><i className="bx bx-left-arrow-alt text-primary text-2xl"></i></div>
-                          {/* <a title="Go Back" ></a> */}
+                       
                       </div>
                       <p className=" text-center text-primary text-5xl font-bold mt-10 md:mt-0">Get Hired!</p>
                   </div>
@@ -103,6 +103,20 @@ export default function Home({searchParams}) {
         )
 
     }else{
-        return <h1>Loading...</h1>
+        return (
+
+            <div className={waveStyle.centerwave}>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+            <div className={waveStyle.wave}></div>
+          </div>
+            )
     }
 }
