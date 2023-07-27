@@ -16,7 +16,7 @@ console.log('====================================');
         setIsClient(true)
     }, []);
 
-    if(isClient){
+    if(isClient && searchParams){
         return (
           <section>
               <head>
