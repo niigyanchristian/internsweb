@@ -8,10 +8,10 @@ import Image from 'next/image';
 
 export default function Home({searchParams}) {
     const [isClient, setIsClient] = useState(false);
-    const {title}=searchParams;
+    const {title,name, location}=searchParams;
     // const router = useRouter();
 console.log('====================================');
-console.log('-->',title);
+console.log('-->',title,name,location);
 console.log('====================================');
 
     useEffect(() => {
@@ -49,7 +49,7 @@ console.log('====================================');
                   <div className="sm:flex justify-between items-center">
                       <div className="my-10 text-gray-600 w-full sm:w-3/4">
                           <p className="text-3xl text-gray-800 font-semibold">{title}</p>
-                          <p className="flex items-center my-2 text-xl"><span><i className='bx bxs-building-house mr-2 text-gray-700 text-2xl'></i></span>searchParams.name-searchParams.location</p>
+                          <p className="flex items-center my-2 text-xl"><span><i className='bx bxs-building-house mr-2 text-gray-700 text-2xl'></i></span>{name}-{location}</p>
                           <div className="text-lg flex space-x-2 sm:space-x-3 md:space-x-5 lg:space-x-10">
                               <p className="flex items-center"><span><i className='bx bx-map text-blue-700 text-lg' ></i></span>On-site</p>
                               <p className="flex items-center"><span><i className='bx bxs-book-content text-gray-600 text-lg mr-2'></i></span>Internship</p>
