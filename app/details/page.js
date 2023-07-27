@@ -17,7 +17,7 @@ console.log('====================================');
         setIsClient(true)
     }, []);
 
-    if(isClient && searchParams){
+    if(isClient){
         return (
           <section>
               <head>
@@ -47,8 +47,8 @@ console.log('====================================');
                   </div>
                   <div className="sm:flex justify-between items-center">
                       <div className="my-10 text-gray-600 w-full sm:w-3/4">
-                          <p className="text-3xl text-gray-800 font-semibold">{searchParams.title}</p>
-                          <p className="flex items-center my-2 text-xl"><span><i className='bx bxs-building-house mr-2 text-gray-700 text-2xl'></i></span>{searchParams.name}-{searchParams.location}</p>
+                          <p className="text-3xl text-gray-800 font-semibold">searchParams.title</p>
+                          <p className="flex items-center my-2 text-xl"><span><i className='bx bxs-building-house mr-2 text-gray-700 text-2xl'></i></span>searchParams.name-searchParams.location</p>
                           <div className="text-lg flex space-x-2 sm:space-x-3 md:space-x-5 lg:space-x-10">
                               <p className="flex items-center"><span><i className='bx bx-map text-blue-700 text-lg' ></i></span>On-site</p>
                               <p className="flex items-center"><span><i className='bx bxs-book-content text-gray-600 text-lg mr-2'></i></span>Internship</p>
@@ -58,7 +58,7 @@ console.log('====================================');
                       </div>
                       <div className="mr-auto">
                           {/* <button className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md">Apply here.</button> */}
-                          <Link className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md" target='_blank' href={searchParams.link}>Apply here</Link>
+                          <Link className="bg-primary hover:bg-secondary text-white px-8 py-2 rounded-md" target='_blank' href={'#'}>Apply here</Link>
                       </div>
                   </div>
                   
@@ -66,7 +66,7 @@ console.log('====================================');
                   <div className=" text-gray-600">
                       <h2 className=" font-semibold text-black">Job Description</h2>
                       <p className="my-4">
-                      {searchParams.description}
+                      searchParams.description
                       </p>
       
                       <h2 className="mt-16 font-semibold text-black">About Company</h2>
