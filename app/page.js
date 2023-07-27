@@ -3,16 +3,19 @@ import { useEffect } from 'react';
 import '@/styles/globals.css'
 import positionContainer from '@/public/js/script';
 import Link from 'next/link';
+// import { useRouter } from 'next/router';
 
 const Data = [
-    {id:1,title:'Senior Embedded Systems Software Developer',name:'ASML',location:'Veldhoven, North Brabant, Netherlands (Hybrid)',date:'27/4/2023',description:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta, dolore nihil, quae, perspiciatis nulla odio exercitationem nam sunt expedita voluptatem reiciendis possimus quam numquam excepturi fugit distinctio enim animi!',link:'https://www.linkedin.com/jobs/view/3633761743/?trackingId=NTp31T04QpWmv8Hu9IhTGw%3D%3D&refId=xJO%2BJEdATwesg54wf7%2Bx3w%3D%3D&midToken=AQEOMuSCKHdS6w&midSig=0jRzIgHhcmZGM1&trk=eml-jobs_jymbii_digest-job_card-0-jobcard_body&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-1qnbak~livo1f1s~hu-null-null&eid=1qnbak-livo1f1s-hu',},
+    {id:1,title:'Senior Embedded Systems Software Developer',name:'ASML',location:'Veldhoven, North Brabant, Netherlands (Hybrid)',date:'27/4/2023',description:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta, dolore nihil, quae, perspiciatis nulla odio exercitationem nam sunt expedita voluptatem reiciendis possimus quam numquam excepturi fugit distinctio enim animi!',
+    about:'About, sit amet consectetur adipisicing elit. Dignissimos dicta, dolore nihil, quae, perspiciatis nulla odio exercitationem nam sunt expedita voluptatem reiciendis possimus quam numquam excepturi fugit distinctio enim animi!',
+    link:'https://www.linkedin.com/jobs/view/3633761743/?trackingId=NTp31T04QpWmv8Hu9IhTGw%3D%3D&refId=xJO%2BJEdATwesg54wf7%2Bx3w%3D%3D&midToken=AQEOMuSCKHdS6w&midSig=0jRzIgHhcmZGM1&trk=eml-jobs_jymbii_digest-job_card-0-jobcard_body&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-1qnbak~livo1f1s~hu-null-null&eid=1qnbak-livo1f1s-hu',},
     {id:2,title:'Embedded Software Lead Engineer | Bambi Medical',name:'Cooder',location:'Eindhoven, North Brabant, Netherlands (On-site) ',date:'27/4/2023',description:'At Bambi Medical, we are dedicated to making babies lives happier from day one. Do you want to be part of this? Send us a message!',link:'https://www.linkedin.com/jobs/view/3617944203/?trackingId=9sChIYb0SGmfOsCMdEDPdA%3D%3D&refId=7XavsmteRD2dI%2BWxdcw6IQ%3D%3D&midToken=AQEOMuSCKHdS6w&midSig=0jRzIgHhcmZGM1&trk=eml-jobs_jymbii_digest-job_card-0-jobcard_body&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-1qnbak~livo1f1s~hu-null-null&eid=1qnbak-livo1f1s-hu',},
     {id:3,title:'Systems Validation Engineer',name:'Tesla',location:'Tilburg, North Brabant, Netherlands',date:'27/4/2023',description:'Tesla Energy is seeking an exceptional systems validation engineer who is passionate about our mission to accelerate the world’s transition to sustainable energy and excited to take on a challenge. As a systems validation engineer, you will be responsible for supporting test setup, system testing, and requirement validation of our next-generation energy charging products. We foster a collaborative work environment and encourage each other to have fun as we work together to change the world',link:'https://www.linkedin.com/jobs/view/3637854848/?refId=nmIDTcX%2FSQeMcZiYjGFADg%3D%3D&trackingId=lpJ3wTAoTYOqvXNY%2Bhw7FA%3D%3D'},
     {id:4,title:'Project Manager “System Engineering” 0,8 - 1 fte',name:'Eindhoven',location:'North Brabant, Netherlands',date:'27/4/2023',description:'Eindhoven University of Technology (TU/e) is one of Europe’s top universities of technology, situated at the heart of a most innovative high-tech region. Due to a wealth of collaborations with industry and academic institutes, TU/e’s research has real-world impact. TU/e has around 3,000 employees, and about 13,000 students. Our university is at the heart of society: TU/e focuses on complex, societal and industrial challenges in education and research',link:'https://www.linkedin.com/jobs/view/3623006040/?trackingId=w8iaXsxpQ6KY22KkZNKT0A%3D%3D&refId=ObhNmiGlTm%2BGciaRyulKpA%3D%3D&midToken=AQEOMuSCKHdS6w&midSig=0jRzIgHhcmZGM1&trk=eml-jobs_jymbii_digest-job_card-0-jobcard_body&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-1qnbak~livo1f1s~hu-null-null&eid=1qnbak-livo1f1s-hu'},
 
 ]
 export default function Home() {
-
+    
     useEffect(() => {
         // Add the scroll event listener when the component mounts.
         window.addEventListener('scroll', positionContainer);
@@ -22,6 +25,7 @@ export default function Home() {
           window.removeEventListener('scroll', positionContainer);
         };
     }, []);
+      
 
   return (
     <div className='main_body'>  
@@ -83,8 +87,10 @@ export default function Home() {
                         <div key={item.id} className="p-5 border-b border-t border-primary hover:bg-gray-100 cursor-pointer text-gray-600">
                         <div className=" flex justify-between">
                             <h1 className=" text-[25px] md:text-3xl text-gray-800 font-semibold">{item.title}</h1>
-                            <Link href={item.link} target='_blank' className="bg-primary text-white px-4 py-1 md:px-8 md:py-2 rounded-md hover:bg-secondary">Apply</Link>
-                            {/* <button className="bg-primary text-white px-4 py-1 md:px-8 md:py-2 rounded-md hover:bg-secondary">Apply</button> */}
+                            <Link href={{
+                                pathname:'/details',
+                                query:item
+                            }} className="bg-primary text-white px-4 py-1 md:px-8 md:py-2 rounded-md hover:bg-secondary">View</Link>
                         </div>
                         <p className="">{item.name}
                         </p>
