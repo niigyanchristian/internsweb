@@ -8,10 +8,10 @@ import Image from 'next/image';
 
 export default function Home({searchParams}) {
     const [isClient, setIsClient] = useState(false);
-    const {title,name, location}=searchParams;
+    const {title,name, location,description}=searchParams;
     // const router = useRouter();
 console.log('====================================');
-console.log('-->',title,name,location);
+console.log('-->',title,name,location,description);
 console.log('====================================');
 
     useEffect(() => {
@@ -67,7 +67,7 @@ console.log('====================================');
                   <div className=" text-gray-600">
                       <h2 className=" font-semibold text-black">Job Description</h2>
                       <p className="my-4">
-                      searchParams.description
+                      {description}
                       </p>
       
                       <h2 className="mt-16 font-semibold text-black">About Company</h2>
